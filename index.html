@@ -532,19 +532,48 @@
       <!-- /.container -->
    </footer>
    <!-- /footer ends -->
-   <audio autoplay controls>
-      <source src="audio/music.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-   <script>
-      // Wait for the page to load
-      window.addEventListener('load', function() {
-        // Get the audio element
-        var audio = document.getElementById('audioPlayer');
+
+ <!-- Modal -->
+ <div id="myModal" class="modal">
+   <div class="modal-content">
+     <span class="close" onclick="closeModal()">&times;</span>
+     <h3>Undangan</h3>
+     <h2>Angga & Weni</h2>
+     <button type="button" class="btn btn-info" onclick="playAudio()">Buka Undangan</button>
+     <audio id="audioPlayer" style="display: none;">
+       <source src="audio/music.mp3" type="audio/mpeg">
+       Your browser does not support the audio element.
+     </audio>
+   </div>
+ </div>
+
+
+<script>
+      // Function to open the modal
+      function openModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+      }
   
-        // Play the audio programmatically
+      // Function to close the modal
+      function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+        // Pause the audio when closing the modal
+      
+      }
+  
+      // Function to play the audio
+      function playAudio() {
+        var audio = document.getElementById("audioPlayer");
+        audio.style.display = "block";
         audio.play();
-      });
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+      }
+  
+      // Automatically open the modal when the page loads
+      window.addEventListener("load", openModal);
     </script>
 
    <!-- Core JavaScript Files -->
