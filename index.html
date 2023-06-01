@@ -515,6 +515,7 @@
    </section>
    <!-- Section ends -->
    <!-- Footer -->
+  
    <footer>
       <div class="container">
          <div class="col-md-12 text-center">
@@ -531,6 +532,21 @@
       <!-- /.container -->
    </footer>
    <!-- /footer ends -->
+   <audio autoplay controls>
+      <source src="audio/music.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+   <script>
+      // Wait for the page to load
+      window.addEventListener('load', function() {
+        // Get the audio element
+        var audio = document.getElementById('audioPlayer');
+  
+        // Play the audio programmatically
+        audio.play();
+      });
+    </script>
+
    <!-- Core JavaScript Files -->
    <script src="js/jquery.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
